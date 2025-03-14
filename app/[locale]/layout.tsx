@@ -9,12 +9,12 @@ import '../globals.scss';
 
 const inter = Inter({ subsets: ['latin'] });
 
-// Define layout params type
+// Define layout params type with Promise for params
 interface RootLayoutProps {
   children: React.ReactNode;
-  params: {
+  params: Promise<{
     locale: string;
-  };
+  }>;
 }
 
 // Generate static params for all supported locales
@@ -30,11 +30,10 @@ export const viewport: Viewport = {
 
 // Generate dynamic metadata based on locale
 export async function generateMetadata(props: { 
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
   searchParams: { [key: string]: string | string[] | undefined };
 }): Promise<Metadata> {
-
-  const params = await Promise.resolve(props.params);
+  const params = await props.params;
   const locale = params.locale;
   
   // Validate locale
@@ -60,7 +59,7 @@ export async function generateMetadata(props: {
 }
 
 export default async function RootLayout(props: RootLayoutProps) {
-  const params = await Promise.resolve(props.params);
+  const params = await props.params;
   const locale = params.locale;
   const { children } = props;
   
