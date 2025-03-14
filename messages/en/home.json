@@ -1,0 +1,37 @@
+{
+  "title": "Welcome to FactQuest",
+  "subtitle": "Test your knowledge with themed quizzes",
+  "startQuiz": "Start Quiz",
+  "viewLeaderboard": "View Leaderboard",
+  "dashboard": "My Dashboard",
+  "description": "FactQuest is a thematic quiz application where you can choose question categories and answer to earn points. Challenge yourself and compete with others!",
+  "quizCard": {
+    "title": "Quiz",
+    "description": "Choose from various categories and test your knowledge"
+  },
+  "leaderboardCard": {
+    "title": "Leaderboard",
+    "description": "Compete with others and see your ranking"
+  },
+  "dashboardCard": {
+    "title": "Dashboard",
+    "description": "Track your progress and achievements"
+  },
+  "quiz": {
+    "random": {
+      "title": "Random Quiz",
+      "description": "Answer the following questions:",
+      "submitButton": "Submit Answers",
+      "tryAgainButton": "Try Again",
+      "scoreText": "Your score: {score} out of {total}",
+      "congratsText": "Congratulations! You answered all questions correctly!",
+      "tryAgainText": "Try again!",
+      "pleaseAnswerAll": "Please answer all questions!"
+    }
+  },
+  "leaderboard": {
+    "title": "Leaderboard",
+    "description": "See who's leading the pack in FactQuest",
+    "refreshInfo": "This page updates every 30 seconds to show the latest scores"
+  }
+} 

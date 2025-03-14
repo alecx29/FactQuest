@@ -1,0 +1,37 @@
+{
+  "title": "Bine ați venit la FactQuest",
+  "subtitle": "Testează-ți cunoștințele cu quiz-uri tematice",
+  "startQuiz": "Începe Quiz",
+  "viewLeaderboard": "Vezi Clasamentul",
+  "dashboard": "Tabloul meu de bord",
+  "description": "FactQuest este o aplicație de quiz tematic unde poți alege categorii de întrebări și răspunde pentru a câștiga puncte. Provoacă-te și concurează cu alții!",
+  "quizCard": {
+    "title": "Quiz",
+    "description": "Alege din diverse categorii și testează-ți cunoștințele"
+  },
+  "leaderboardCard": {
+    "title": "Clasament",
+    "description": "Concurează cu alții și vezi poziția ta în clasament"
+  },
+  "dashboardCard": {
+    "title": "Tablou de bord",
+    "description": "Urmărește-ți progresul și realizările"
+  },
+  "quiz": {
+    "random": {
+      "title": "Quiz Aleatoriu",
+      "description": "Răspunde la următoarele întrebări:",
+      "submitButton": "Trimite Răspunsurile",
+      "tryAgainButton": "Încearcă din nou",
+      "scoreText": "Scorul tău: {score} din {total}",
+      "congratsText": "Felicitări! Ai răspuns corect la toate întrebările!",
+      "tryAgainText": "Mai încearcă!",
+      "pleaseAnswerAll": "Te rugăm să răspunzi la toate întrebările!"
+    }
+  },
+  "leaderboard": {
+    "title": "Clasament",
+    "description": "Vezi cine conduce în FactQuest",
+    "refreshInfo": "Această pagină se actualizează la fiecare 30 de secunde pentru a afișa cele mai recente scoruri"
+  }
+} 

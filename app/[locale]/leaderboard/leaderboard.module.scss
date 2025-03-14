@@ -1,0 +1,87 @@
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem;
+  
+  .header {
+    text-align: center;
+    margin-bottom: 3rem;
+    
+    .title {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: #333;
+    }
+    
+    .description {
+      font-size: 1.2rem;
+      color: #666;
+      margin-bottom: 1rem;
+    }
+    
+    .refreshInfo {
+      font-size: 0.9rem;
+      color: #888;
+      font-style: italic;
+    }
+  }
+  
+  .leaderboardTable {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    
+    .tableHeader {
+      display: grid;
+      grid-template-columns: 0.5fr 2fr 1fr 1fr 1.5fr;
+      background-color: #4a90e2;
+      color: white;
+      font-weight: bold;
+      padding: 1rem;
+    }
+    
+    .tableRow {
+      display: grid;
+      grid-template-columns: 0.5fr 2fr 1fr 1fr 1.5fr;
+      padding: 1rem;
+      border-bottom: 1px solid #eee;
+      align-items: center;
+      
+      &:hover {
+        background-color: #f0f7ff;
+      }
+      
+      &:nth-child(2) { // 1st
+        background-color: rgba(255, 215, 0, 0.1);
+        
+        .rank, .score {
+          color: #ffd700;
+        }
+      }
+      
+      .rank {
+        font-weight: bold;
+        text-align: center;
+      }
+      
+      .username {
+        font-weight: 500;
+      }
+      
+      .score {
+        font-weight: bold;
+        color: #4a90e2;
+      }
+      
+      .quizzesTaken {
+        color: #666;
+      }
+      
+      .lastActive {
+        color: #888;
+        font-size: 0.9rem;
+      }
+    }
+  }
+}
