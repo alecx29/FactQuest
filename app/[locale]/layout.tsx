@@ -12,13 +12,17 @@ export function generateStaticParams() {
   return locales.map(locale => ({ locale }));
 }
 
+type LayoutProps = {
+  children: ReactNode;
+  params: {
+    locale: string;
+  };
+}
+
 export default async function RootLayout({
   children,
   params
-}: {
-  children: ReactNode;
-  params: { locale: string };
-}) {
+}: LayoutProps) {
   const locale = params.locale;
   
   // Validate that the incoming locale parameter is valid
