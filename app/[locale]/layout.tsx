@@ -12,10 +12,14 @@ export function generateStaticParams() {
   return locales.map(locale => ({ locale }));
 }
 
-// Using type any for passing vercel build error
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export default async function RootLayout(props: any) {
-  const { children, params } = props;
+// Folosim tipul corect pentru parametrii de layout
+export default async function RootLayout({
+  children,
+  params,
+}: {
+  children: React.ReactNode;
+  params: { locale: string };
+}) {
   const locale = params.locale;
   
   // Validate that the incoming locale parameter is valid

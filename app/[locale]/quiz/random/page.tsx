@@ -9,6 +9,13 @@ interface Question {
   correctAnswer: number;
 }
 
+// Define the type for page params
+interface PageParams {
+  params: {
+    locale: string;
+  };
+}
+
 // This function will be executed on the server at each request
 // This is an SSR implementation
 export const dynamic = 'force-dynamic'; // Forces SSR
@@ -53,11 +60,7 @@ async function getRandomQuestions(locale: string): Promise<Question[]> {
   return locale === 'ro' ? roQuestions : enQuestions;
 }
 
-export default async function RandomQuizPage({
-  params
-}: {
-  params: { locale: string }
-}) {
+export default async function RandomQuizPage({ params }: PageParams) {
   // get the random questions - this code runs on the server (SSR)
   const questions = await getRandomQuestions(params.locale);
   

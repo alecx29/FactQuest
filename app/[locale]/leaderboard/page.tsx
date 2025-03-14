@@ -10,6 +10,13 @@ interface LeaderboardEntry {
   lastActive: string;
 }
 
+// Define the type for page params
+interface PageParams {
+  params: {
+    locale: string;
+  };
+}
+
 // This enables ISR - Incremental Static Regeneration
 export const revalidate = 30; // Revalidate every 30 seconds
 
@@ -102,11 +109,7 @@ async function getLeaderboardData(locale: string): Promise<LeaderboardEntry[]> {
   return locale === 'ro' ? roLeaderboard : enLeaderboard;
 }
 
-export default async function LeaderboardPage({
-  params
-}: {
-  params: { locale: string }
-}) {
+export default async function LeaderboardPage({ params }: PageParams) {
   // Get leaderboard data - this will be cached and revalidated every 30 seconds
   const leaderboardData = await getLeaderboardData(params.locale);
   
