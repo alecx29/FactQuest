@@ -25,3 +25,10 @@ npm run dev
 Deployed on Vercel for fast and scalable performance.
 
 🚀 **Enjoy learning with FactQuest!**
+
+Opportunities for Improvement
+
+TypeScript Types - Could use a more structured organization of interfaces.
+State Management - could be good if we use more data
+Data Validation - Robust validation for input data.
+Documentation - More detailed documentation
