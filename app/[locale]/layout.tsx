@@ -4,7 +4,7 @@ import { Link } from '../i18n/navigation';
 import { notFound } from 'next/navigation';
 import { locales } from '../i18n/config';
 import { NextIntlClientProvider } from 'next-intl';
-import { Metadata } from 'next';
+import { Metadata, Viewport } from 'next';
 import '../globals.scss';
 
 const inter = Inter({ subsets: ['latin'] });
@@ -22,17 +22,22 @@ export function generateStaticParams() {
   return locales.map(locale => ({ locale }));
 }
 
+// Define viewport separately as recommended by Next.js
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+};
+
 // Generate dynamic metadata based on locale
-export async function generateMetadata({ 
-  params,
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  searchParams: _
-}: { 
+export async function generateMetadata(props: { 
   params: { locale: string };
   searchParams: { [key: string]: string | string[] | undefined };
 }): Promise<Metadata> {
-  // Validate locale
+
+  const params = await Promise.resolve(props.params);
   const locale = params.locale;
+  
+  // Validate locale
   if (!locales.includes(locale)) return notFound();
   
   try {
@@ -44,19 +49,20 @@ export async function generateMetadata({
       description: 'Improve your knowledge with interactive quizzes on various topics',
     };
   }
-  
+ 
   // Return localized metadata
   return {
     title: locale === 'ro' ? 'FactQuest - Învață prin Quiz-uri' : 'FactQuest - Learn Through Quizzes',
     description: locale === 'ro' 
       ? 'Îmbunătățește-ți cunoștințele cu quiz-uri interactive pe diverse teme' 
       : 'Improve your knowledge with interactive quizzes on various topics',
-    viewport: 'width=device-width, initial-scale=1',
   };
 }
 
-export default async function RootLayout({ children, params }: RootLayoutProps) {
+export default async function RootLayout(props: RootLayoutProps) {
+  const params = await Promise.resolve(props.params);
   const locale = params.locale;
+  const { children } = props;
   
   // Validate that the incoming locale parameter is valid
   if (!locales.includes(locale)) notFound();
